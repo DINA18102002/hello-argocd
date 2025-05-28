@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hello
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: hello
@@ -17,5 +17,6 @@ spec:
       containers:
         - name: hello-container
           image: hello-argocd:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 80
